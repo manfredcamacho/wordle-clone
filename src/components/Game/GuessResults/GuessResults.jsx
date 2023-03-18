@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { GameContext } from "../../../utils/context";
 
-const GuessResult = () => {
+const GuessResults = () => {
   const { guesses } = useContext(GameContext);
   return (
     <div className="guess-result">
@@ -14,4 +14,4 @@ const GuessResult = () => {
   );
 };
 
-export default GuessResult;
+export default GuessResults;

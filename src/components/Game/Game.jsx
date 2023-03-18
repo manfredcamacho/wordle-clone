@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import GuessInput from "./GuessInput";
-import GuessResult from "./GuessResult";
+import GuessResults from "./GuessResults";
 import { GameContextProvider } from "../../utils/context";
 import "./Game.css";
 
@@ -8,7 +8,7 @@ const Game = () => {
   return (
     <div>
       <GameContextProvider>
-        <GuessResult></GuessResult>
+        <GuessResults></GuessResults>
         <GuessInput></GuessInput>
       </GameContextProvider>
     </div>
