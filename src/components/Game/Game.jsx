@@ -1,11 +1,16 @@
 import React, { useState } from "react";
 import GuessInput from "./GuessInput";
+import GuessResult from "./GuessResult";
+import { GameContextProvider } from "../../utils/context";
 import "./Game.css";
 
 const Game = () => {
   return (
     <div>
-      <GuessInput></GuessInput>
+      <GameContextProvider>
+        <GuessResult></GuessResult>
+        <GuessInput></GuessInput>
+      </GameContextProvider>
     </div>
   );
 };
