@@ -1,7 +1,7 @@
 const Header = () => {
   return (
     <header>
-      <h1>WORDLE</h1>
+      <h1>My Wordle clone</h1>
     </header>
   );
 };

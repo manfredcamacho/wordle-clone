@@ -6,7 +6,7 @@ import "./Game.css";
 
 const Game = () => {
   return (
-    <div>
+    <div className="game-wrapper">
       <GameContextProvider>
         <GuessResults></GuessResults>
         <GuessInput></GuessInput>

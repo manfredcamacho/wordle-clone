@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
 import normalize from "../../../utils/normalize";
 import { GameContext } from "../../../utils/context";
+import "./GuessInput.css";
 
 const GuessInput = () => {
   const [guess, setGuess] = useState("");
@@ -8,7 +9,7 @@ const GuessInput = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    context.setGuesses([...context.guesses, guess]);
+    context.addGuess(guess);
     setGuess("");
   };
 
