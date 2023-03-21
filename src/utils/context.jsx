@@ -7,6 +7,7 @@ export const GameContextProvider = ({ children }) => {
     Array(NUM_OF_GUESSES_ALLOWED).fill(Array(WORD_LENGTH).fill(""))
   );
   const [currentAttempt, setCurrentAttempt] = useState(0);
+  const answer = "PERRO";
 
   const addGuess = (guess) => {
     const guessesCopy = Array.from(guesses);
@@ -18,6 +19,7 @@ export const GameContextProvider = ({ children }) => {
   const context = {
     guesses,
     addGuess,
+    answer,
   };
 
   return (

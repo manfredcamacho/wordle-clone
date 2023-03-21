@@ -1,12 +1,12 @@
 import React, { useContext } from "react";
 import { GameContext } from "../../../utils/context";
 import Guess from "./Guess";
-import style from "./GuessResults.css";
+import "./GuessResults.css";
 
 const GuessResults = () => {
   const { guesses } = useContext(GameContext);
   return (
-    <div className={style["guess-result"]}>
+    <div className="guess-result">
       {guesses.map((guess) => (
         <Guess key={crypto.randomUUID()} word={guess}></Guess>
       ))}

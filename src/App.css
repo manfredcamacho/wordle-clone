@@ -16,6 +16,9 @@ html {
   --game-spacing: 32px;
   --header-height: 4rem;
 
+  --color-success: hsl(150deg 70% 30%);
+  --color-warning: hsl(50deg 100% 30%);
+
   --color-gray-300: hsl(0deg 0% 25%);
   --color-gray-700: hsl(0deg 0% 75%);
 }
