@@ -5,11 +5,11 @@ import "./GuessInput.css";
 
 const GuessInput = () => {
   const [guess, setGuess] = useState("");
-  const context = useContext(GameContext);
+  const { addGuess, isGameOver } = useContext(GameContext);
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    context.addGuess(guess);
+    addGuess(guess);
     setGuess("");
   };
 
@@ -22,6 +22,7 @@ const GuessInput = () => {
         name="guess-input"
         autoFocus
         required
+        disabled={isGameOver}
         minLength={5}
         maxLength={5}
         pattern="[A-Z]{5}"

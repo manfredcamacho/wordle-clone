@@ -1,16 +1,18 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import GuessInput from "./GuessInput";
 import GuessResults from "./GuessResults";
-import { GameContextProvider } from "../../utils/context";
+import { HappyBanner, SadBanner } from "../Banner";
+import { GameContext } from "../../utils/context";
 import "./Game.css";
 
 const Game = () => {
+  const { isWinner, isGameOver, attempts, answer } = useContext(GameContext);
   return (
     <div className="game-wrapper">
-      <GameContextProvider>
-        <GuessResults></GuessResults>
-        <GuessInput></GuessInput>
-      </GameContextProvider>
+      <GuessResults></GuessResults>
+      <GuessInput></GuessInput>
+      {isWinner && <HappyBanner attempts={attempts}></HappyBanner>}
+      {isGameOver && !isWinner && <SadBanner answer={answer}></SadBanner>}
     </div>
   );
 };

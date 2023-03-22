@@ -1,12 +1,15 @@
 import Header from "./components/Header";
 import Game from "./components/Game";
+import { GameContextProvider } from "./utils/context";
 import "./App.css";
 
 function App() {
   return (
     <div className="App">
-      <Header></Header>
-      <Game></Game>
+      <GameContextProvider>
+        <Header></Header>
+        <Game></Game>
+      </GameContextProvider>
     </div>
   );
 }
