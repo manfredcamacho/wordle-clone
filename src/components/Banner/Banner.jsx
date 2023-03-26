@@ -1,10 +1,18 @@
+import React from "react";
 import "./Banner.css";
+import { GameContext } from "../../utils/context";
 
 const Banner = ({ className, children }) => {
+  const { resetGame } = React.useContext(GameContext);
   return (
-    <div className={`${className} banner`}>
-      <p>{children}</p>
-    </div>
+    <>
+      <div className={`${className} banner`}>
+        <p>{children}</p>
+        <button className={"resetButton"} onClick={resetGame}>
+          Play Again
+        </button>
+      </div>
+    </>
   );
 };
 

@@ -10,7 +10,7 @@ export const GameContextProvider = ({ children }) => {
   const [currentAttempt, setCurrentAttempt] = useState(1);
   const [isGameOver, setIsGameOver] = useState(false);
   const [isWinner, setIsWinner] = useState(false);
-  const [answer] = useState(getWord());
+  const [answer, setAnswer] = useState(getWord());
 
   const addGuess = (guess) => {
     const guessesCopy = Array.from(guesses);
@@ -24,6 +24,14 @@ export const GameContextProvider = ({ children }) => {
     setCurrentAttempt(currentAttempt + 1);
   };
 
+  const resetGame = () => {
+    setIsGameOver(false);
+    setIsWinner(false);
+    setCurrentAttempt(1);
+    setAnswer(getWord());
+    setGuesses(Array(NUM_OF_GUESSES_ALLOWED).fill(Array(WORD_LENGTH).fill("")));
+  };
+
   const context = {
     guesses,
     attempts: currentAttempt,
@@ -31,6 +39,7 @@ export const GameContextProvider = ({ children }) => {
     isGameOver,
     isWinner,
     addGuess,
+    resetGame,
   };
 
   return (
